@@ -17,9 +17,10 @@ body {
 
 .input-form {
   width: calc(100% - 4px);
-  height: 300px;
+  height: 150px;
   padding: 0;
   white-space:pre-wrap;
+  font-size: 1.3em;
 }
 
 .keyboard {
@@ -65,6 +66,7 @@ body {
 .active {
   background-color: #50c878;
   border-radius: 10px;
+  transform: scale(1.15);
 }
 
 .active1 {
@@ -89,8 +91,5 @@ width: 300px;
 }
 
 .text {
-
   text-align: center;
-
-
 }
