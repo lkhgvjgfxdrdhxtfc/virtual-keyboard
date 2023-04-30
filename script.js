@@ -8,20 +8,11 @@ divContainer.className = "container";
 
 
 
-// document.body.appendChild(divContainer);
-
-
 
 let input = document.createElement('input');
 
 input.className = "input-form";
 
-// document.querySelector('container').appendChild(input);
-
-
-// divContainer.append(input);
-
-// document.body.appendChild(divContainer);
 
 let keyboard = document.createElement('div');
 keyboard.className = "keyboard";
@@ -39,7 +30,7 @@ document.body.innerHTML = `
   <div class="keyboard">
 
     <div class="row">
-      <div class="button function-btn" id="btn-tld">
+      <div class="button" id="btn-tld">
       \`
       </div>
       <div class="button" id="btn1">
@@ -212,8 +203,8 @@ document.body.innerHTML = `
       /
       </div>
 
-      <div class="button function-btn" id="btn-arrow-up">
-      
+      <div class="button" id="btn-arrow-up">
+      \u{2191}
       </div>
       
       <div class="button function-btn" id="btn-shift-r">
@@ -232,7 +223,7 @@ document.body.innerHTML = `
       <div class="button function-btn" id="btn-alt-l">
       Alt
       </div>
-      <div class="button" id="btn-space">
+      <div class="button space" id="btn-space" >
       
       </div>
       <div class="button function-btn" id="btn-alt-r">
@@ -247,19 +238,24 @@ document.body.innerHTML = `
           <option value="ru">Ru</option>
         </select>
       </div>
-      <div class="button function-btn" id="btn-arrow-left">
-      
+      <div class="button" id="btn-arrow-left">
+      \u{2190}
       </div>
-      <div class="button function-btn" id="btn-arrow-down">
-      
+      <div class="button" id="btn-arrow-down">
+      \u{2193}
       </div>
-      <div class="button function-btn" id="btn-arrow-right">
-      
+      <div class="button" id="btn-arrow-right">
+      \u{2192}
       </div>
       
 
   </div>
 </div>
+<div class="text">
+<p>Virtual keyboar created in Windows OS.</p>
+<p>There is a separate key on the keyboard to change the language.</p>
+</div>
+
 
 `
 
@@ -456,6 +452,10 @@ function changeLanguage() {
         text.value += 'ю';
       });
 
+      document.getElementById("btn-slash").innerHTML = ".";
+      document.getElementById("btn-slash").addEventListener('click', function () {
+        text.value += '.';
+      });
   }
 
   else if (document.getElementById("language").value === "en") {
@@ -627,9 +627,18 @@ function changeLanguage() {
         text.value += '.';
       });
 
+      document.getElementById("btn-slash").innerHTML = "/";
+      document.getElementById("btn-slash").addEventListener('click', function () {
+        text.value += '/';
+      });
+
+
+
+
   }
 
 }
+
 
 
 window.addEventListener('load', changeLanguage);
@@ -641,371 +650,15 @@ window.addEventListener('load', changeLanguage);
 
 document.getElementById("language").addEventListener("change", function() {
 
- if (document.getElementById("language").value === "ru") {
 
+changeLanguage();
 
-      document.getElementById("btn-tld").innerHTML = "ё";
-      document.getElementById("btn-tld").addEventListener('click', function () {
-        text.value += 'ё';
-      });
-     
-      document.getElementById("btn-q").innerHTML = "й";
-      document.getElementById("btn-q").addEventListener('click', function () {
-        text.value += 'й';
-      });
 
-      document.getElementById("btn-w").innerHTML = "ц";
-      document.getElementById("btn-w").addEventListener('click', function () {
-        text.value += 'ц';
-      });
 
-      document.getElementById("btn-e").innerHTML = "у";
-      document.getElementById("btn-e").addEventListener('click', function () {
-        text.value += 'у';
-      });
-
-      document.getElementById("btn-r").innerHTML = "к";
-      document.getElementById("btn-r").addEventListener('click', function () {
-        text.value += 'к';
-      });
-
-      document.getElementById("btn-t").innerHTML = "е";
-      document.getElementById("btn-t").addEventListener('click', function () {
-        text.value += 'е';
-      });
-
-      document.getElementById("btn-y").innerHTML = "н";
-      document.getElementById("btn-y").addEventListener('click', function () {
-        text.value += 'н';
-      });
-
-      document.getElementById("btn-u").innerHTML = "г";
-      document.getElementById("btn-u").addEventListener('click', function () {
-        text.value += 'г';
-      });
-
-      document.getElementById("btn-i").innerHTML = "ш";
-      document.getElementById("btn-i").addEventListener('click', function () {
-        text.value += 'ш';
-      });
-
-      document.getElementById("btn-o").innerHTML = "щ";
-      document.getElementById("btn-o").addEventListener('click', function () {
-        text.value += 'щ';
-      });
-
-      document.getElementById("btn-p").innerHTML = "з";
-      document.getElementById("btn-p").addEventListener('click', function () {
-        text.value += 'з';
-      });
-
-      document.getElementById("btn-[").innerHTML = "х";
-      document.getElementById("btn-[").addEventListener('click', function () {
-        text.value += 'х';
-      });
-
-      document.getElementById("btn-]").innerHTML = "ъ";
-      document.getElementById("btn-]").addEventListener('click', function () {
-        text.value += 'ъ';
-      });
-
-      document.getElementById("btn-a").innerHTML = "ф";
-      document.getElementById("btn-a").addEventListener('click', function () {
-        text.value += 'ф';
-      });
-
-      document.getElementById("btn-s").innerHTML = "ы";
-      document.getElementById("btn-s").addEventListener('click', function () {
-        text.value += 'ы';
-      });
-
-      document.getElementById("btn-d").innerHTML = "в";
-      document.getElementById("btn-d").addEventListener('click', function () {
-        text.value += 'в';
-      });
-
-      document.getElementById("btn-f").innerHTML = "а";
-      document.getElementById("btn-f").addEventListener('click', function () {
-        text.value += 'а';
-      });
-
-      document.getElementById("btn-g").innerHTML = "п";
-      document.getElementById("btn-g").addEventListener('click', function () {
-        text.value += 'п';
-      });
-
-      document.getElementById("btn-h").innerHTML = "р";
-      document.getElementById("btn-h").addEventListener('click', function () {
-        text.value += 'р';
-      });
-
-      document.getElementById("btn-j").innerHTML = "о";
-      document.getElementById("btn-j").addEventListener('click', function () {
-        text.value += 'о';
-      });
-
-      document.getElementById("btn-k").innerHTML = "л";
-      document.getElementById("btn-k").addEventListener('click', function () {
-        text.value += 'л';
-      });
-
-      document.getElementById("btn-l").innerHTML = "д";
-      document.getElementById("btn-l").addEventListener('click', function () {
-        text.value += 'д';
-      });
-
-      document.getElementById("btn-smcln").innerHTML = "ж";
-      document.getElementById("btn-smcln").addEventListener('click', function () {
-        text.value += 'ж';
-      });
-
-      document.getElementById("btn-quo").innerHTML = "э";
-      document.getElementById("btn-quo").addEventListener('click', function () {
-        text.value += 'э';
-      });
-
-      document.getElementById("btn-z").innerHTML = "я";
-      document.getElementById("btn-z").addEventListener('click', function () {
-        text.value += 'я';
-      });
-
-      document.getElementById("btn-x").innerHTML = "ч";
-      document.getElementById("btn-x").addEventListener('click', function () {
-        text.value += 'ч';
-      });
-
-      document.getElementById("btn-c").innerHTML = "с";
-      document.getElementById("btn-c").addEventListener('click', function () {
-        text.value += 'с';
-      });
-
-
-      document.getElementById("btn-v").innerHTML = "м";
-      document.getElementById("btn-v").addEventListener('click', function () {
-        text.value += 'м';
-      });
-
-      document.getElementById("btn-b").innerHTML = "и";
-      document.getElementById("btn-b").addEventListener('click', function () {
-        text.value += 'и';
-      });
-
-      document.getElementById("btn-n").innerHTML = "т";
-      document.getElementById("btn-n").addEventListener('click', function () {
-        text.value += 'т';
-      });
-
-      document.getElementById("btn-m").innerHTML = "ь";
-      document.getElementById("btn-m").addEventListener('click', function () {
-        text.value += 'ь';
-      });
-
-      document.getElementById("btn-comma").innerHTML = "б";
-      document.getElementById("btn-comma").addEventListener('click', function () {
-        text.value += 'б';
-      });
-
-      document.getElementById("btn-point").innerHTML = "ю";
-      document.getElementById("btn-point").addEventListener('click', function () {
-        text.value += 'ю';
-      });
-
-  }
-
-  else if (document.getElementById("language").value === "en") {
-
-      document.getElementById("btn-tld").innerHTML = "\`";
-      document.getElementById("btn-tld").addEventListener('click', function () {
-        text.value += '\`';
-      });
-
-      document.getElementById("btn-q").innerHTML = "q";
-      document.getElementById("btn-q").addEventListener('click', function () {
-        text.value += 'q';
-      });
-
-      document.getElementById("btn-w").innerHTML = "w";
-      document.getElementById("btn-w").addEventListener('click', function () {
-        text.value += 'w';
-      });
-
-      document.getElementById("btn-e").innerHTML = "e";
-      document.getElementById("btn-e").addEventListener('click', function () {
-        text.value += 'e';
-      });
-
-      document.getElementById("btn-r").innerHTML = "r";
-      document.getElementById("btn-r").addEventListener('click', function () {
-        text.value += 'r';
-      });
-
-      document.getElementById("btn-t").innerHTML = "t";
-      document.getElementById("btn-t").addEventListener('click', function () {
-        text.value += 't';
-      });
-
-      document.getElementById("btn-y").innerHTML = "y";
-      document.getElementById("btn-y").addEventListener('click', function () {
-        text.value += 'y';
-      });
-
-      document.getElementById("btn-u").innerHTML = "u";
-      document.getElementById("btn-u").addEventListener('click', function () {
-        text.value += 'u';
-      });
-
-      document.getElementById("btn-i").innerHTML = "i";
-      document.getElementById("btn-i").addEventListener('click', function () {
-        text.value += 'i';
-      });
-
-      document.getElementById("btn-o").innerHTML = "o";
-      document.getElementById("btn-o").addEventListener('click', function () {
-        text.value += 'o';
-      });
-
-      document.getElementById("btn-p").innerHTML = "p";
-      document.getElementById("btn-p").addEventListener('click', function () {
-        text.value += 'p';
-      });
-
-      document.getElementById("btn-[").innerHTML = "[";
-      document.getElementById("btn-[").addEventListener('click', function () {
-        text.value += '[';
-      });
-
-      document.getElementById("btn-]").innerHTML = "]";
-      document.getElementById("btn-]").addEventListener('click', function () {
-        text.value += ']';
-      });
-
-
-      document.getElementById("btn-a").innerHTML = "a";
-      document.getElementById("btn-a").addEventListener('click', function () {
-        text.value += 'a';
-      });
-
-      document.getElementById("btn-s").innerHTML = "s";
-      document.getElementById("btn-s").addEventListener('click', function () {
-        text.value += 's';
-      });
-
-      document.getElementById("btn-d").innerHTML = "d";
-      document.getElementById("btn-d").addEventListener('click', function () {
-        text.value += 'd';
-      });
-
-      document.getElementById("btn-f").innerHTML = "f";
-      document.getElementById("btn-f").addEventListener('click', function () {
-        text.value += 'f';
-      });
-
-      document.getElementById("btn-g").innerHTML = "g";
-      document.getElementById("btn-g").addEventListener('click', function () {
-        text.value += 'g';
-      });
-
-      document.getElementById("btn-h").innerHTML = "h";
-      document.getElementById("btn-h").addEventListener('click', function () {
-        text.value += 'h';
-      });
-
-      document.getElementById("btn-j").innerHTML = "j";
-      document.getElementById("btn-j").addEventListener('click', function () {
-        text.value += 'j';
-      });
-
-      document.getElementById("btn-k").innerHTML = "k";
-      document.getElementById("btn-k").addEventListener('click', function () {
-        text.value += 'k';
-      });
-
-      document.getElementById("btn-l").innerHTML = "l";
-      document.getElementById("btn-l").addEventListener('click', function () {
-        text.value += 'l';
-      });
-
-      document.getElementById("btn-smcln").innerHTML = ";";
-      document.getElementById("btn-smcln").addEventListener('click', function () {
-        text.value += ';';
-      });
-
-      document.getElementById("btn-quo").innerHTML = "'";
-      document.getElementById("btn-quo").addEventListener('click', function () {
-        text.value += '\'';
-      });
-
-      document.getElementById("btn-z").innerHTML = "z";
-      document.getElementById("btn-z").addEventListener('click', function () {
-        text.value += 'z';
-      });
-
-      document.getElementById("btn-x").innerHTML = "x";
-      document.getElementById("btn-x").addEventListener('click', function () {
-        text.value += 'x';
-      });
-
-      document.getElementById("btn-c").innerHTML = "c";
-      document.getElementById("btn-c").addEventListener('click', function () {
-        text.value += 'c';
-      });
-
-
-      document.getElementById("btn-v").innerHTML = "v";
-      document.getElementById("btn-v").addEventListener('click', function () {
-        text.value += 'v';
-      });
-
-      document.getElementById("btn-b").innerHTML = "b";
-      document.getElementById("btn-b").addEventListener('click', function () {
-        text.value += 'b';
-      });
-
-      document.getElementById("btn-n").innerHTML = "n";
-      document.getElementById("btn-n").addEventListener('click', function () {
-        text.value += 'n';
-      });
-
-      document.getElementById("btn-m").innerHTML = "m";
-      document.getElementById("btn-m").addEventListener('click', function () {
-        text.value += 'm';
-      });
-
-      document.getElementById("btn-comma").innerHTML = ",";
-      document.getElementById("btn-comma").addEventListener('click', function () {
-        text.value += ',';
-      });
-
-      document.getElementById("btn-point").innerHTML = ".";
-      document.getElementById("btn-point").addEventListener('click', function () {
-        text.value += '.';
-      });
-
-  }
+ 
 
 });
 
-
-/*
-document.getElementById("language").addEventListener("change", function(){
-  if (this.value === "ru") {
-    document.getElementById("btn-q").innerHTML = "й";
-    document.getElementById("btn-w").innerHTML = "ц";
-  } else if (this.value === "en") {
-    document.getElementById("btn-q").innerHTML = "q";
-    document.getElementById("btn-w").innerHTML = "w";
-  }
-
-  document.getElementById("btn-q").addEventListener('click', function () {
-    if (document.getElementById("language").value === "ru") {
-    text.value += 'й';    
-    } else if (document.getElementById("language").value === "en") {
-    text.value += 'q'; 
-   }
-  });
-
-});
-*/
 
 
 //Keyboard action
@@ -1062,6 +715,47 @@ document.getElementById("tab").addEventListener('click', function () {
     text.value += '	';
 });
 
+document.getElementById("btn-enter").addEventListener('click', function () {
+    text.value += '\n';
+   text.value.replace(/\n\r?/g, '<br/>');
+});
+
+document.getElementById("btn-arrow-up").addEventListener('click', function () {
+    text.value += '\u{2191}';
+
+});
+
+document.getElementById("btn-arrow-left").addEventListener('click', function () {
+    text.value += '\u{2190}';
+
+});
+
+document.getElementById("btn-arrow-down").addEventListener('click', function () {
+    text.value += '\u{2193}';
+
+});
+
+document.getElementById("btn-arrow-right").addEventListener('click', function () {
+    text.value += '\u{2192}';
+
+});
+
+
+document.getElementById("btn-bcksp").addEventListener('click', function () {
+    text.value = text.value.slice(0, -1); 
+
+});
+
+document.getElementById("btn-backslash").addEventListener('click', function () {
+    text.value += '\\';
+
+});
+
+
+document.getElementById("btn-space").addEventListener('click', function () {
+    text.value += ' ';
+
+});
 
 
 
@@ -1772,31 +1466,3 @@ document.addEventListener ('keyup', function(event) {
         document.getElementById("btn-arrow-right").classList.remove('active');
         }
 })
-
-/*
-
-
-*/
-
-
-
-// CAPS
-/*
-document.getElementById("btn-caps").addEventListener ('click', function() {
-      document.getElementById("btn-caps").classList.toggle('active1');
-});
-
-
-
-
-
-if (document.getElementById("btn-caps").classList.contains('active1')) {
-console.log('+');
-
-document.getElementById("btn-a").addEventListener('click', function () {
-    let text = document.getElementById('text');
-    text.value += 'A';
-});
-
-}
-*/
