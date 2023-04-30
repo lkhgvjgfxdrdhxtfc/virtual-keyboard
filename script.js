@@ -1,32 +1,11 @@
 // Keyboard creation
 
-
-let divContainer = document.createElement('div');
-
-divContainer.className = "container";
-
-
-
-
-
-let input = document.createElement('input');
-
-input.className = "input-form";
-
-
-let keyboard = document.createElement('div');
-keyboard.className = "keyboard";
-
-let row = document.createElement('div');
-row.className = "row";
-
-let buttonkey = document.createElement('div');
+console.log('Смена языка работает не совсем корректно.\nБуду благодарен, если кто-ибудь подскажет, как исправить код, чтобы устранить этот баг.')
 
 document.body.innerHTML = `
 
 <div class="container">
-  <input class="input-form" type="text" id="text" name="name">
-
+  <textarea class="input-form" id="text" name="name" autofocus></textarea>
   <div class="keyboard">
 
     <div class="row">
@@ -252,8 +231,7 @@ document.body.innerHTML = `
   </div>
 </div>
 <div class="text">
-<p>Virtual keyboar created in Windows OS.</p>
-<p>There is a separate key on the keyboard to change the language.</p>
+<p>Virtual keyboar created in Windows OS. There is a separate key on the keyboard to change the language.</p>
 </div>
 
 
@@ -717,7 +695,7 @@ document.getElementById("tab").addEventListener('click', function () {
 
 document.getElementById("btn-enter").addEventListener('click', function () {
     text.value += '\n';
-   text.value.replace(/\n\r?/g, '<br/>');
+
 });
 
 document.getElementById("btn-arrow-up").addEventListener('click', function () {
@@ -756,8 +734,12 @@ document.getElementById("btn-space").addEventListener('click', function () {
     text.value += ' ';
 
 });
+/*
+document.getElementById("btn-del").addEventListener('click', function () {
+    text.value = text.value.slice(0, text.selectionStart - 1) + text.value.slice(text.selectionStart, text.value.length);
 
-
+});
+*/
 
 
 
