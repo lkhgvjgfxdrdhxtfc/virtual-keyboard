@@ -19,6 +19,7 @@ body {
   width: calc(100% - 4px);
   height: 300px;
   padding: 0;
+  white-space:pre-wrap;
 }
 
 .keyboard {
@@ -45,15 +46,20 @@ body {
   align-items: center;
   justify-content: center;
   color: white;
+  transition: all 0.2s ease-out;
+
+
 }
 
 .button:hover {
   background-color: #90ee90;
+
 }
 
 .button:active {
   background-color: #50c878;
   border-radius: 10px;
+  transform: scale(1.15);
 }
 
 .active {
@@ -76,4 +82,15 @@ body {
 .bkspc {
   width: auto;
   padding: 0 10px 0 10px;
+}
+
+.space {
+width: 300px;
+}
+
+.text {
+
+  text-align: center;
+
+
 }
