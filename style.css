@@ -1,0 +1,95 @@
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  height: 100vh;
+  margin: 0;
+}
+
+.container {
+  width: 1000px;
+  
+  border: 1px solid black;
+  border-radius: 2px;
+  padding: 5px;
+}
+
+.input-form {
+  width: calc(100% - 4px);
+  height: 150px;
+  padding: 0;
+  white-space:pre-wrap;
+  font-size: 1.3em;
+}
+
+.keyboard {
+  width: 100%;
+  height: 300px;
+  margin-top: 10px;
+  padding: 0;
+
+}
+
+.row, .row1, .row2, .row3, .row4, .row5 {
+ display: flex;
+ justify-content: space-between;
+ padding-top: 5px;
+ padding-bottom: 5px;
+}
+
+.button {
+  width: 50px;
+  height: 50px;
+  background-color: grey;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  transition: all 0.2s ease-out;
+
+
+}
+
+.button:hover {
+  background-color: #90ee90;
+
+}
+
+.button:active {
+  background-color: #50c878;
+  border-radius: 10px;
+  transform: scale(1.15);
+}
+
+.active {
+  background-color: #50c878;
+  border-radius: 10px;
+  transform: scale(1.15);
+}
+
+.active1 {
+  background-color: blue;
+  border-radius: 10px;
+}
+
+
+.function-btn {
+  /*background-color: black;*/
+  width: auto;
+  padding: 0 10px 0 10px;
+}
+
+.bkspc {
+  width: auto;
+  padding: 0 10px 0 10px;
+}
+
+.space {
+width: 300px;
+}
+
+.text {
+  text-align: center;
+}
